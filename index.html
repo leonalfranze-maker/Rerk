@@ -72,8 +72,10 @@ h2::after{content:"";flex:1;height:1px;background:var(--line)}
 .det .t{font-family:'Kanit';font-weight:400;font-size:14px;color:var(--ink);margin:10px 0 3px}
 .det .do{color:var(--jade)}.det .dont{color:var(--clay)}
 .hdr{font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.24em;color:var(--brass);padding:13px 14px 5px;background:var(--card2)}
-.pin{display:grid;grid-template-columns:84px 1fr;gap:10px;padding:10px 20px;font-size:13.5px;border-bottom:1px solid var(--line)}
+.pin{display:grid;grid-template-columns:68px 74px 1fr;gap:10px;padding:10px 20px;font-size:13.5px;border-bottom:1px solid var(--line)}
 .pin .d{font:500 11px 'IBM Plex Mono',monospace;color:var(--brass)}
+.pin .dd{font:400 11px 'IBM Plex Mono',monospace;color:var(--dim)}
+.pin .dd b{color:var(--jade);font-weight:500}
 footer{padding:28px 20px 44px;font-size:11px;color:var(--dim);font-weight:300;line-height:1.75;border-top:1px solid var(--line);margin-top:24px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style></head><body><div class="wrap">
@@ -161,10 +163,28 @@ const TUB={ // ดาวจร|ดาวเดิม
 'ราหู|มฤตยู':['-','จะมีเรื่องเขย่าขวัญ มีเหตุให้ตกใจอย่างรุนแรง']};
 const PINS=[['2026-09-07','ทักแม่ ทักคนเก่า วันที่แรงงอนคลาย'],['2026-09-17','ยื่นเรื่องที่หวังผล'],
 ['2026-09-20','ตั้งระบบเงิน หักออมอัตโนมัติ'],['2026-09-29','ปล่อยนิยายขึ้นแพลตฟอร์ม (ช่วงเย็น–ค่ำ)'],
-['2026-10-04','⚠ เพชฌฆาตฤกษ์ — อย่าเริ่มอะไรใหม่'],['2026-10-05','สอบ AWS / วันสำรองปล่อยนิยาย'],
-['2026-10-18','ปิดหน้าต่างลาภประจำปี'],['2026-10-20','วันเกิด ๔๒ — ขึ้นปีใหม่ของดวง'],
-['2026-10-28','วันเจรจาที่ดีที่สุดของปลายปี'],['2026-11-04','เครื่องยนต์รอบ ๗ ปีติด (เปลี่ยนมหาทศา)'],
-['2027-07-01','⚠ เข้าโซนระวังกลางปี ๗๐ (ผู้ใหญ่ · หัวใจ)'],['2027-10-20','ศรีจรย้ายไปตกพฤหัสเกษตร']];
+['2026-10-04','⚠ เพชฌฆาตฤกษ์ — อย่าเริ่มอะไรใหม่'],['2026-10-05','สอบ AWS — ผ่านแล้ว ✓'],
+['2026-10-14','ราชาฤกษ์ — วันเริ่ม/ยื่น/เสนอ ของครึ่งเดือน'],
+['2026-10-17','ฤกษ์เศรษฐีสองวันติด + จันทร์เรือนเงิน — โค้งสุดท้ายปล่อยของ'],
+['2026-10-18','ปิดหน้าต่างลาภประจำปี — เส้นตายจริง'],
+['2026-10-20','วันเกิด ๔๒ — ขึ้นปีใหม่ของดวง · ทำบุญที่อยู่/สายเสาร์ · เริ่มเปลี่ยนลุค'],
+['2026-10-21','อาทิตย์กลับตำแหน่งเกิด — นั่งเขียนเป้าปี ๔๒ สักชั่วโมง'],
+['2026-10-23','⚠ เพชฌฆาตฤกษ์ (หยุดยาว) — เที่ยวได้ อย่าเริ่ม/อย่าเซ็น'],
+['2026-10-24','⚠ พุธเริ่มถอยหลัง ถึง ๑๔ พ.ย. — งดเซ็นของใหม่ ตรวจทุกอย่างสองรอบ'],
+['2026-10-26','วันเพ็ญ + จันทร์เรือนอุปสรรค — ใจแกว่งสุดเดือน นอนให้พอ'],
+['2026-10-27','⭐ วันเจรจาดีที่สุดปลายปี (อาทิตย์ทับพุธ + ฤกษ์เศรษฐี)'],
+['2026-10-30','ศุกร์ทับอาทิตย์ — ทักครู/คนเก่า จะให้ลาภ'],
+['2026-10-31','พฤหัสเข้าเรือนการงาน — ประตูงานเปิด (วันนี้ฟังได้ อย่าเพิ่งรับปาก)'],
+['2026-11-04','เครื่องยนต์รอบ ๗ ปีติด (เปลี่ยนมหาทศา) + ฤกษ์เศรษฐี'],
+['2026-11-14','⭐ พุธ+ศุกร์กลับเดินหน้า + ฤกษ์เศรษฐี — ไฟเขียวเริ่มโปรโมตนิยาย'],
+['2026-11-20','ราชาฤกษ์ — ปล่อยแคมเปญโปรโมตแรก'],
+['2026-11-23','ฤกษ์เศรษฐี — รอบสำรองแคมเปญ/เรื่องยอดขาย'],
+['2026-12-30','อาทิตย์ทับพฤหัส — ลาภปิดปี โพสต์ขอบคุณคนอ่าน (ได้ลาภแล้วอย่าคุยโว)'],
+['2027-01-08','ศุกร์ทับศุกร์ — วันทองเรื่องบ้าน/ที่อยู่อาศัย'],
+['2027-02-11','หน้าต่างทอง ๑๑–๑๔ ก.พ. — เข้าหาผู้ใหญ่ ขอในสิ่งที่หวัง'],
+['2027-07-01','⚠ เข้าโซนระวังกลางปี ๗๐ (ผู้ใหญ่ · หัวใจ) ถึง ก.ย.'],
+['2027-10-17','อังคารทับศุกร์ — "ได้มิตร ได้คู่ครอง พบความชื่นใจ"'],
+['2027-10-20','ศรีจรย้ายไปตกพฤหัสเกษตร']];
 const b36=s=>parseInt(s,36);
 const T0=new Date(D.start+'T00:00:00');
 function idx(d){return Math.round((new Date(d.getFullYear(),d.getMonth(),d.getDate())-new Date(T0.getFullYear(),T0.getMonth(),T0.getDate()))/864e5)}
@@ -175,6 +195,7 @@ function mlon(i,h){const q=Math.floor(h/6),f=(h-q*6)/6,a=i*4+q;
 function th(n){return String(n).replace(/[0-9]/g,d=>'๐๑๒๓๔๕๖๗๘๙'[d])}
 function hhmm(m){m=Math.round(m)%1440;return th(String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0'))}
 const MTH=['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'];
+const MTHS=['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
 
 function taksaJorn(d){
  const b=new Date(1984,9,20); let age=d.getFullYear()-1984;
@@ -309,10 +330,11 @@ function render(d){
  if(!hh)hh='<div class="card"><div class="sm">วันนี้ไม่มีดาวจรทับดาวเดิมในระยะ ๓ องศา — เป็นวันที่ไม่มีแรงกระตุ้นพิเศษจากดาวจร</div></div>';
 
  // pins
- const ds=d.toISOString().slice(0,10);
  let ph='';
- PINS.forEach(p=>{const dd=(new Date(p[0]+'T00:00:00')-new Date(ds+'T00:00:00'))/864e5;
-  if(dd>=0&&dd<=45)ph+='<div class="pin"><span class="d">'+(dd===0?'วันนี้':'อีก '+th(dd)+' วัน')+'</span><span>'+p[1]+'</span></div>';});
+ PINS.forEach(p=>{const q=p[0].split('-'),pd=new Date(+q[0],q[1]-1,+q[2]);
+  const dd=Math.round((pd-new Date(d.getFullYear(),d.getMonth(),d.getDate()))/864e5);
+  const dt=th(pd.getDate())+' '+MTHS[pd.getMonth()]+(pd.getFullYear()!==d.getFullYear()?' '+th((pd.getFullYear()+543)%100):'');
+  if(dd>=0&&dd<=45)ph+='<div class="pin"><span class="d">'+dt+'</span><span class="dd">'+(dd===0?'<b>วันนี้</b>':'อีก '+th(dd)+' วัน')+'</span><span>'+p[1]+'</span></div>';});
 
  document.getElementById('out').innerHTML=
  '<div class="hd"><div class="eyeb">วัน'+wdn+' · '+phase+'</div>'+
