@@ -214,7 +214,7 @@ function taksaJorn(d){
 function kalayok(d){
  let be=d.getFullYear()+543; const apr=new Date(d.getFullYear(),3,16); if(d<apr)be--;
  const cs=be-1181;
- const wan=n=>WD[n%7], rasi=n=>SIGN[(n%12+11)%12], low=n=>BIG[(n%9+8)%9][0];
+ const wan=n=>WD[(n+6)%7], rasi=n=>SIGN[(n%12+11)%12], low=n=>BIG[(n%9+8)%9][0];
  return{cs:cs,be:be,
   thong:[wan((cs*10+3)%7),rasi(cs*10+3)],
   ath:wan((cs*498)%7),
@@ -241,7 +241,7 @@ function render(d){
  const rise2=(i+1<D.n)?b36(D.rise.substr((i+1)*3,3)):rise;
  const wd=d.getDay(), wdn=WD[wd];
  const mo=mlon(i,12), nk=Math.floor(mo/(360/27)), big=BIG[nk%9];
- const sunl=plon(i,0), sb=BHAVA[(Math.floor(sunl/30)-7+12)%12];
+ const sunl=plon(i,0), sb=BHAVA[Math.floor(sunl/30)];
  const tj=taksaJorn(d), ky=kalayok(d);
  // ดิถี
  const el=((mo-sunl)%360+360)%360, tithi=Math.floor(el/12)+1;

@@ -202,7 +202,7 @@ function taksaJorn(d){
 function kalayok(d){
  let be=d.getFullYear()+543; const apr=new Date(d.getFullYear(),3,16); if(d<apr)be--;
  const cs=be-1181;
- const wan=n=>WD[n%7], rasi=n=>SIGN[(n%12+11)%12], low=n=>BIG[(n%9+8)%9][0];
+ const wan=n=>WD[(n+6)%7], rasi=n=>SIGN[(n%12+11)%12], low=n=>BIG[(n%9+8)%9][0];
  return{cs:cs,be:be,
   thong:[wan((cs*10+3)%7),rasi(cs*10+3)],
   ath:wan((cs*498)%7),
